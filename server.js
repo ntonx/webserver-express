@@ -1,7 +1,7 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 const hbs = require('hbs');
-require('./hbs/helpers')
+require('./hbs/helpers');
 
 const port = process.env.PORT || 3000;
 
@@ -16,27 +16,27 @@ app.set('view engine', 'hbs');
 app.get('/json', function(req, res) {
     //res.send('Hola Mundo')
     let salida = {
-        nombre: 'antonio nicolas',
+        nombre: 'antoniO',
         edad: 22,
         url: req.url
-    }
+    };
 
     res.send(salida);
-})
+});
 
 app.get('/', (req, res) => {
     res.render('home.hbs', {
-        nombre: 'Antonio Nicolas'
+        nombre: 'antonio'
     });
-})
+});
 
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        nombre: 'Antonio Nicolas'
+        nombre: 'antonio nicolas'
     });
-})
+});
 
 app.listen(port, () => {
     console.log(`escuchando peticiones en puerto ${port}`);
-})
+});
